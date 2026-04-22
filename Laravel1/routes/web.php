@@ -42,3 +42,8 @@ Route::delete('/hapus/{id}', function($id){
 Route::get('/test-method', function(){
     return view('test_method');
 });
+
+//menampilkan halaman profile
+Route::get('/Profile', function(){
+    return view('Profile');
+});
