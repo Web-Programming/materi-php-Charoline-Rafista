@@ -47,3 +47,54 @@ Route::get('/test-method', function(){
 Route::get('/Profile', function(){
     return view('Profile');
 });
+
+// mengirim data ke view
+Route::get('/detailproduk/(name)', function($name){
+    return view('product.detail',
+        ['product_name' => $name,
+        'id' => 101,
+        'color' => 'Silver',
+        'stock' => 12
+        ]
+    );
+});
+
+Route::get('/produk/', function(){
+    return view(produk.index);
+});
+
+Route::get('/produk/create', function(){
+    return view('produk.create');
+});
+
+Route::get('/produk/search', function(){
+    return view('produk.search');
+});
+
+Route::get('/produk/detail', function(){
+    return view(produk.detail);
+});
+
+Route::get('/supplier/', function(){
+    return view(supplier.index);
+});
+
+Route::get('/supplier/create', function(){
+    return view('supplier.create');
+});
+
+Route::get('/supplier/search', function(){
+    return view('supplier.search');
+});
+
+Route::get('/supplier/detail', function(){
+    return view(supplier.detail);
+});
+
+use App\Http\Controllers\ProductController;
+//php artisan make:controller ProductController --resource
+Route::resource('/produk', ProductController::class);
+Route::get('/produk/search', ProductController::class . '@search');
+
+//php artisan make:controller ProductController --resource
+Route::resource('/supplier', ProductController::class);

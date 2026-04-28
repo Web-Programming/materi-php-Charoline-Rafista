@@ -56,3 +56,16 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+CATATAN : 28 April 2026
+@include untuk memanggil tempat/file yg kita inginkan
+web.php di proyek ini disebut sbg root (?)
+controller.php di proyek ini disebut sbg controller (?)
+
+CMD:
+-> untuk dapat link ke chrome : php artisan serve
+-> utk buat file baru (bkn manual) :  php artisan make:view app.sidebar --> membuat file dgn nama sidebar (sidebar-app-view)
+                                      php artisan make:controller ProductController --> membuat file dgn nama ProductController (ProductController - controller)
+                                      php artisan make:controller ProductController_pake_min_r -r --> kalo pake -r langsung dibuatin fungsi"nya
+-> utk install composer : composer install
+-> utk mendapatkan app key : php artisan key:generate
