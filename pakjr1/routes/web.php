@@ -117,4 +117,7 @@ Route::get('/produk/search', ProductController::class.'@search');
 // });
 
 //php artisan make:controller SupplierController --resource
+use App\Http\Controllers\SupplierController;
+//php artisan make:controller ProductController --resource
 Route::resource('/supplier', SupplierController::class);
+Route::get('/supplier/search', SupplierController::class.'@search');
