@@ -24,11 +24,17 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
     @endif
-    @can('create-product')
+
+    @can ('create product')
     <div class="mb-3">
-        <a href="{{ route('produk.create') }}" class="btn btn-primary">Tambah Produk</a>
+        <a href="{{route('produk.create')}}" class="btn btn-primary">Tambah produk</a>
     </div>
     @endcan
+
+    @cannot ('create-product')
+    <span class="badge bg - secondary">User tidak diizinkan menambahkan produk</span>
+    @endcannot
+
     <div class="table-responsive">
         <table class="table table-striped table-bordered table-hover">
             <thead class="table-dark">

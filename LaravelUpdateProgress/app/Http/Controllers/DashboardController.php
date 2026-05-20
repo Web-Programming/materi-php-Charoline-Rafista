@@ -8,13 +8,11 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        // Menyelaraskan nama variabel agar sesuai dengan compact()
         $totalBarang = Product::count();
-        $barangTersedia = Product::where('status', 1)->count();
-        $barangHabis = Product::where('status', 0)->count();
-        $nilaiStok = 'Rp ' . number_format(Product::sum('harga'), 0, ',', '.');
+        $barangTersedia = Product::where('is_active', 1)->count();
+        $barangHabis = Product::where('is_active', 0)->count();
+        $nilaiStok = 'Rp ' . number_format(Product::sum('price'), 0, ',', '.');
         $barangTerbaru = Product::latest()->take(5)->get();
-
         return view('dashboard', compact(
             'totalBarang',
             'barangTersedia',

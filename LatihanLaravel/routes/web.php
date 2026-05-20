@@ -7,7 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\BarangController;
+
 
 
 // ==================== HOME ====================
@@ -129,7 +129,7 @@ Route::middleware('auth')->group(function () {
         ->name('dashboard');
 
     // Barang
-    Route::resource('/barang', BarangController::class);
+    Route::resource('/barang', ProductController::class);
 
     // Produk
     Route::resource('/produk', ProductController::class);
